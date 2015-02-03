@@ -4,7 +4,12 @@ import pl.com.agora.api.client.rest.UriInvocationException;
 
 public class CommentClientException extends UriInvocationException {
 
-    public CommentClientException(String uri, String message, CommentError result, int responseStatus) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -7497010818593655009L;
+
+	public CommentClientException(String uri, String message, CommentError result, int responseStatus) {
         super(uri, message, result, responseStatus);
     }
 
