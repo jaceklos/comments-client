@@ -16,6 +16,6 @@ public interface CommentClient {
     public Future<List<Comment>> getComments(@LBHash @RestPathVariable("articleId") String articleId);
     
     @RestRequestMapping("/putComment")
-    public Future<Void> putComment(@RestRequestBody Comment comment, @LBHash String articleId);
+    public Future<Void> putComment( @LBHash String articleId, @RestRequestBody Comment comment);
     
 }
