@@ -10,6 +10,7 @@ import pl.com.agora.api.client.rest.bind.annotation.RestRequestMapping;
 @RestRequestMapping("/comments")
 public interface CommentClient {
 
+	
 	@RestRequestMapping("/{articleId}")
     public Future<List<Comment>> getComments(@RestPathVariable("articleId") String articleId);
     
