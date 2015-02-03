@@ -6,15 +6,16 @@ import java.util.concurrent.Future;
 import pl.com.agora.api.client.rest.bind.annotation.RestPathVariable;
 import pl.com.agora.api.client.rest.bind.annotation.RestRequestBody;
 import pl.com.agora.api.client.rest.bind.annotation.RestRequestMapping;
+import pl.com.agora.api.client.rest.hash.LBHash;
 
 @RestRequestMapping("/comments")
 public interface CommentClient {
 
 	
 	@RestRequestMapping("/{articleId}")
-    public Future<List<Comment>> getComments(@RestPathVariable("articleId") String articleId);
+    public Future<List<Comment>> getComments(@LBHash @RestPathVariable("articleId") String articleId);
     
     @RestRequestMapping("/putComment")
-    public void putComment(@RestRequestBody Comment comment);
+    public Future<Void> putComment(@RestRequestBody Comment comment, @LBHash String articleId);
     
 }
